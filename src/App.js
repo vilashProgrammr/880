@@ -15,7 +15,8 @@ class App extends Component {
       <div>
        {this.state.characters.map(character => (
          <Character
-          key={character.id}
+           key={character.id}
+           name={character.id}
           />
        ))}
      </div>
