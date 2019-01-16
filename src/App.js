@@ -5,9 +5,9 @@ import './App.css';
 class App extends Component {
   state = {
     characters: [
-      {id: 1, name: 'Arya Stark'},
-      {id: 2, name: 'Sansa Stark'},
-    ]
+      {id: 1, name: 'Arya Stark', weapon: 'Unarmed'},
+      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed'},
+    ],
   }
 
   render() {
@@ -16,7 +16,8 @@ class App extends Component {
        {this.state.characters.map(character => (
          <Character
            key={character.id}
-           name={character.id}
+           name={character.name}
+           weapon={character.weapon}
           />
        ))}
      </div>
