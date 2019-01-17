@@ -8,8 +8,10 @@ class Character extends Component {
         <span>
           I am a character component, and my name is {this.props.name}. Weapon: {this.props.weapon}
         </span>
-        <button>
-          Arm me
+        <button
+          onClick={() => this.props.arm(this.props.id)}>
+
+            Arm me
         </button>
       </div>
     );
@@ -17,3 +19,5 @@ class Character extends Component {
 }
 
 export default Character;
+
+//id might be wrong
