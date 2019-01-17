@@ -9,7 +9,7 @@ class Character extends Component {
           I am a character component, and my name is {this.props.name}. Weapon: {this.props.weapon}
         </span>
         <button
-          onClick={() => this.props.arm(this.props.id)}>
+          onClick={() => this.props.arm(this.props.character)}>
 
             Arm me
         </button>
