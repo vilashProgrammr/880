@@ -4,7 +4,7 @@ import React, {Component} from 'react';
     render () {
       return (
         <p>
-        Weapon = {this.props.weapon}
+        Weapon = {this.props.weapon.value}
         </p>
       );
     }

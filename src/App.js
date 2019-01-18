@@ -12,11 +12,16 @@ class App extends Component {
     ],
 
     weapons: [
-      'Sword',
-      'Bow & Arrow',
-      'Dragon'
+      {id: 1, value: 'Sword'},
+      {id: 2, value: 'Bow & Arrow'},
+      {id: 3, value:'Dragon'}
     ]
   }
+
+  takeWeapon = weaponID => {
+    const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
+    this.setState({weapons: weapons});
+  };
 
   sword = character => {
     const characters = [...this.state.characters] //the ... is a spread operator.
@@ -25,6 +30,8 @@ class App extends Component {
     characters[index] = {...character}
     characters[index].weapon = 'Sword'
     this.setState({ characters });
+
+    this.takeWeapon(1)
   }
 
   bowArrow = character => {
@@ -47,8 +54,10 @@ class App extends Component {
   render() {
     return (
       <div>
+
       {this.state.weapons.map(weapon => (
         <Arsenal
+          key={weapon.id}
           weapon={weapon}
         />
       ))}
