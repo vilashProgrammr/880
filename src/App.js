@@ -21,6 +21,14 @@ class App extends Component {
     this.setState({ characters });
   }
 
+  bowArrow = character => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = { ...character }
+    characters[index].weapon = 'Bow & Arrow'
+    this.setState({ characters });
+  }
+
 
   render() {
     return (
@@ -30,6 +38,7 @@ class App extends Component {
             key={character.id}
             character={character}
             sword={this.sword}
+            bowArrow={this.bowArrow}
           />
        ))}
      </div>

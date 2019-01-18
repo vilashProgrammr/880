@@ -17,7 +17,7 @@ class Character extends Component {
         </button>
 
         <button
-          onClick={() => this.props.arm(this.props.character)}>
+          onClick={() => this.props.bowArrow(this.props.character)}>
             Bow & Arrow
         </button>
 
