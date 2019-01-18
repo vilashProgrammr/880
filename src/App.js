@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Character from './components/character';
+import Arsenal from './components/arsenal';
 import './App.css';
 
 class App extends Component {
@@ -9,10 +10,15 @@ class App extends Component {
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed'},
       {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed'}
     ],
+
+    weapons: [
+      'Sword',
+      'Bow & Arrow',
+      'Dragon'
+    ]
   }
 
   sword = character => {
-
     const characters = [...this.state.characters] //the ... is a spread operator.
     // It clones the characters array
     const index = characters.indexOf(character)
@@ -41,6 +47,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      <Arsenal/>
        {this.state.characters.map(character => (
          <Character
             key={character.id}
