@@ -22,7 +22,7 @@ class Character extends Component {
         </button>
 
         <button
-          onClick={() => this.props.arm(this.props.character)}>
+          onClick={() => this.props.dragon(this.props.character)}>
             Dragon
         </button>
         </p>

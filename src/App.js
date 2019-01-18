@@ -29,6 +29,14 @@ class App extends Component {
     this.setState({ characters });
   }
 
+  dragon = character => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = { ...character }
+    characters[index].weapon = 'Dragon'
+    this.setState({ characters });
+  }
+
 
   render() {
     return (
@@ -39,6 +47,7 @@ class App extends Component {
             character={character}
             sword={this.sword}
             bowArrow={this.bowArrow}
+            dragon={this.dragon}
           />
        ))}
      </div>
