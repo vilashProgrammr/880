@@ -6,7 +6,7 @@ class Character extends Component {
     return (
       <div>
         <span>
-          I am a character component, and my name is {this.props.character.name}.
+          My name is {this.props.character.name}.
           Weapon: {this.props.character.weapon}
         </span>
 
@@ -27,7 +27,7 @@ class Character extends Component {
             Dragon
         </button>
         </p>
-        
+
       </div>
     );
   }

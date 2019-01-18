@@ -18,6 +18,7 @@ class App extends Component {
     ]
   }
 
+  
   takeWeapon = weaponID => {
     const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
     this.setState({weapons: weapons});
@@ -30,8 +31,7 @@ class App extends Component {
     characters[index] = {...character}
     characters[index].weapon = 'Sword'
     this.setState({ characters });
-
-    this.takeWeapon(1)
+    this.takeWeapon(1);
   }
 
   bowArrow = character => {
@@ -40,6 +40,7 @@ class App extends Component {
     characters[index] = { ...character }
     characters[index].weapon = 'Bow & Arrow'
     this.setState({ characters });
+    this.takeWeapon(2);
   }
 
   dragon = character => {
@@ -48,6 +49,7 @@ class App extends Component {
     characters[index] = { ...character }
     characters[index].weapon = 'Dragon'
     this.setState({ characters });
+    this.takeWeapon(3);
   }
 
 
