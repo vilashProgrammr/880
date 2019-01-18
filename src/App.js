@@ -11,15 +11,16 @@ class App extends Component {
   }
 
   arm = character => {
-    console.log(this.state.characters)
+
     const characters = [...this.state.characters] //the ... is a spread operator.
     // It clones the characters array
-    const index = characters.indexOf(character)
 
+    const index = characters.indexOf(character)
     characters[index] = {...character}
     characters[index].weapon = 'armed'
+
     this.setState({ characters });
-    console.log(this.state.characters)
+
   }
 
 
@@ -29,8 +30,6 @@ class App extends Component {
        {this.state.characters.map(character => (
          <Character
             key={character.id}
-            name={character.name}
-            weapon={character.weapon}
             character={character}
             arm={this.arm}
           />

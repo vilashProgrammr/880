@@ -6,12 +6,23 @@ class Character extends Component {
     return (
       <div>
         <span>
-          I am a character component, and my name is {this.props.name}. Weapon: {this.props.weapon}
+          I am a character component, and my name is {this.props.character.name}.
+          Weapon: {this.props.character.weapon}
         </span>
+          Arm me: 
         <button
           onClick={() => this.props.arm(this.props.character)}>
+            Sword
+        </button>
 
-            Arm me
+        <button
+          onClick={() => this.props.arm(this.props.character)}>
+            Bow & Arrow
+        </button>
+
+        <button
+          onClick={() => this.props.arm(this.props.character)}>
+            Dragon
         </button>
       </div>
     );
