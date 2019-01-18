@@ -7,20 +7,18 @@ class App extends Component {
     characters: [
       {id: 1, name: 'Arya Stark', weapon: 'Unarmed'},
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed'},
+      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed'}
     ],
   }
 
-  arm = character => {
+  sword = character => {
 
     const characters = [...this.state.characters] //the ... is a spread operator.
     // It clones the characters array
-
     const index = characters.indexOf(character)
     characters[index] = {...character}
-    characters[index].weapon = 'armed'
-
+    characters[index].weapon = 'Sword'
     this.setState({ characters });
-
   }
 
 
@@ -31,7 +29,7 @@ class App extends Component {
          <Character
             key={character.id}
             character={character}
-            arm={this.arm}
+            sword={this.sword}
           />
        ))}
      </div>
