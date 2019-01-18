@@ -47,7 +47,12 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Arsenal/>
+      {this.state.weapons.map(weapon => (
+        <Arsenal
+          weapon={weapon}
+        />
+      ))}
+
        {this.state.characters.map(character => (
          <Character
             key={character.id}

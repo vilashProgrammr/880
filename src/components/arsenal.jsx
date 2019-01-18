@@ -3,7 +3,9 @@ import React, {Component} from 'react';
   class Arsenal extends Component {
     render () {
       return (
-        "I'm the Arsenal, what up"
+        <p>
+        Weapon = {this.props.weapon}
+        </p>
       );
     }
   }
