@@ -14,49 +14,46 @@ class App extends Component {
     weapons: [
       {id: 1, value: 'Sword'},
       {id: 2, value: 'Bow & Arrow'},
-      {id: 3, value:'Dragon'}
+      {id: 3, value: 'Dragon'}
     ]
   }
-
 
   takeWeapon = weaponID => {
     const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
     this.setState({weapons: weapons});
   };
 
+  arm = (characters, index, message, weaponIndex) => {
+    characters[index].weapon = message
+    this.setState({ characters });
+    this.takeWeapon(weaponIndex);
+  };
+
+
   noAvailability = (characters, index) => {
     characters[index].errorMessage = 'You have already given this weapon'
     + ' to another character'
     this.setState({ characters });
+    console.log(this.state.characters)
   }
 
+
   sword = character => {
-    const characters = [...this.state.characters] //the ... is a spread operator.
-    // It clones the characters array
-    const index = characters.indexOf(character) //Just to make it a more
-    //flexible function, going through the array to find the character which
-    // matches the argument passed and then getting that index.
-    characters[index] = {...character} // replacing the object in the index
-    // that's there (in the cloned array)
-    // with the now cloned character - why is this necessary? See comment below....
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = {...character}
     characters[index].weapon = 'Sword'
-    this.setState({ characters }); // I think this is like characters = characters,
-    //replacing the state with the duplicate array
-    /// but I don't understand why we have to clone the character itself,
-    //shouldn't the characters cloned array come with it's
-    // own cloned characters already inside?
-    this.takeWeapon(1);
+    this.setState({ characters });
+    this.takeWeapon(1)
   }
 
   bowArrow = character => {
     const characters = [...this.state.characters]
     const index = characters.indexOf(character)
-    characters[index] = { ...character }
+    characters[index] = { ...character } // refactor?
 
     if (this.state.weapons.find(item => item.value === 'Bow & Arrow') !== undefined ) {
-        characters[index].weapon = 'Bow & Arrow'
-        this.setState({ characters });
-        this.takeWeapon(2);
+      this.arm(characters, index, 'Bow & Arrow', 2)
        }
     else {
       this.noAvailability(characters, index)
