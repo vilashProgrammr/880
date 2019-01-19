@@ -24,6 +24,12 @@ class App extends Component {
     this.setState({weapons: weapons});
   };
 
+  noAvailability = (characters, index) => {
+    characters[index].errorMessage = 'You have already given this weapon'
+    + ' to another character'
+    this.setState({ characters });
+  }
+
   sword = character => {
     const characters = [...this.state.characters] //the ... is a spread operator.
     // It clones the characters array
@@ -47,20 +53,17 @@ class App extends Component {
     const index = characters.indexOf(character)
     characters[index] = { ...character }
 
-    if (this.state.weapons.find(item => item.value === 'Bow & Arrow') != undefined ) {
+    if (this.state.weapons.find(item => item.value === 'Bow & Arrow') !== undefined ) {
         characters[index].weapon = 'Bow & Arrow'
         this.setState({ characters });
         this.takeWeapon(2);
        }
     else {
-      characters[index].errorMessage = 'You have already given this weapon'
-      + ' to another character'
-      this.setState({ characters });
+      this.noAvailability(characters, index)
     }
-    //refactor
   }
 
-  dragon = character => {
+  dragon = (character) => {
     const characters = [...this.state.characters]
     const index = characters.indexOf(character)
     characters[index] = { ...character }

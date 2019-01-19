@@ -26,10 +26,10 @@ class Character extends Component {
           onClick={() => this.props.dragon(this.props.character)}>
             Dragon
         </button>
-        </p>
-        <span>
+
           {this.props.character.errorMessage}
-        </span>
+        </p>
+
       </div>
     );
   }
