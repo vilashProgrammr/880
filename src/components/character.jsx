@@ -27,7 +27,9 @@ class Character extends Component {
             Dragon
         </button>
         </p>
-
+        <span>
+          {this.props.character.errorMessage}
+        </span>
       </div>
     );
   }

@@ -6,9 +6,9 @@ import './App.css';
 class App extends Component {
   state = {
     characters: [
-      {id: 1, name: 'Arya Stark', weapon: 'Unarmed'},
-      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed'},
-      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed'}
+      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: ''},
+      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: ''},
+      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: ''}
     ],
 
     weapons: [
@@ -46,12 +46,18 @@ class App extends Component {
     const characters = [...this.state.characters]
     const index = characters.indexOf(character)
     characters[index] = { ...character }
-    
-    if (this.state.weapons.find(o => o.value === 'Bow & Arrow') != undefined ) {
+
+    if (this.state.weapons.find(item => item.value === 'Bow & Arrow') != undefined ) {
         characters[index].weapon = 'Bow & Arrow'
         this.setState({ characters });
         this.takeWeapon(2);
        }
+    else {
+      characters[index].errorMessage = 'You have already given this weapon'
+      + ' to another character'
+      this.setState({ characters });
+    }
+    //refactor
   }
 
   dragon = character => {
