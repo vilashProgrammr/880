@@ -18,17 +18,38 @@ class App extends Component {
     ]
   }
 
+  sword = character => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = {...character} //how to successfully refactor these lines?
+    this.availabilityOfWeapons(characters, index, 'Sword', 1);
+  }
+
+  bowArrow = character => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = { ...character }
+    this.availabilityOfWeapons(characters, index, 'Bow & Arrow', 2);
+  };
+
+  dragon = (character) => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = { ...character }
+    this.availabilityOfWeapons(characters, index, 'Dragon', 3);
+  };
+
+
   takeWeapon = weaponID => {
     const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
     this.setState({weapons: weapons});
   };
 
-
   availabilityOfWeapons = (characters, index, message, weaponIndex) => {
     if (this.state.weapons.find(item => item.value === message) !== undefined ) {
-      this.arm(characters, index, message, weaponIndex) // maybe take out arm  method
+      this.arm(characters, index, message, weaponIndex);
     } else {
-      this.noAvailability(characters, index)
+      this.noAvailability(characters, index);
     }
   };
 
@@ -44,32 +65,6 @@ class App extends Component {
     this.setState({ characters });
     console.log(this.state.characters)
   }
-
-
-  sword = character => {
-    const characters = [...this.state.characters]
-    const index = characters.indexOf(character)
-    characters[index] = {...character}
-    characters[index].weapon = 'Sword'
-    this.availabilityOfWeapons(characters, index, 'Sword', 1)
-  }
-
-  bowArrow = character => {
-    const characters = [...this.state.characters]
-    const index = characters.indexOf(character)
-    characters[index] = { ...character } // refactor?
-
-    this.availabilityOfWeapons(characters, index, 'Bow & Arrow', 2)
-  }
-
-  dragon = (character) => {
-    const characters = [...this.state.characters]
-    const index = characters.indexOf(character)
-    characters[index] = { ...character }
-    characters[index].weapon = 'Dragon'
-    this.availabilityOfWeapons(characters, index, 'Dragon', 3)
-  }
-
 
   render() {
     return (
