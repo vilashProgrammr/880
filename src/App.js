@@ -23,12 +23,20 @@ class App extends Component {
     this.setState({weapons: weapons});
   };
 
+
+  availabilityOfWeapons = (characters, index, message, weaponIndex) => {
+    if (this.state.weapons.find(item => item.value === message) !== undefined ) {
+      this.arm(characters, index, message, weaponIndex) // maybe take out arm  method
+    } else {
+      this.noAvailability(characters, index)
+    }
+  };
+
   arm = (characters, index, message, weaponIndex) => {
     characters[index].weapon = message
     this.setState({ characters });
     this.takeWeapon(weaponIndex);
   };
-
 
   noAvailability = (characters, index) => {
     characters[index].errorMessage = 'You have already given this weapon'
@@ -43,8 +51,7 @@ class App extends Component {
     const index = characters.indexOf(character)
     characters[index] = {...character}
     characters[index].weapon = 'Sword'
-    this.setState({ characters });
-    this.takeWeapon(1)
+    this.availabilityOfWeapons(characters, index, 'Sword', 1)
   }
 
   bowArrow = character => {
@@ -52,12 +59,7 @@ class App extends Component {
     const index = characters.indexOf(character)
     characters[index] = { ...character } // refactor?
 
-    if (this.state.weapons.find(item => item.value === 'Bow & Arrow') !== undefined ) {
-      this.arm(characters, index, 'Bow & Arrow', 2)
-       }
-    else {
-      this.noAvailability(characters, index)
-    }
+    this.availabilityOfWeapons(characters, index, 'Bow & Arrow', 2)
   }
 
   dragon = (character) => {
@@ -65,8 +67,7 @@ class App extends Component {
     const index = characters.indexOf(character)
     characters[index] = { ...character }
     characters[index].weapon = 'Dragon'
-    this.setState({ characters });
-    this.takeWeapon(3);
+    this.availabilityOfWeapons(characters, index, 'Dragon', 3)
   }
 
 
