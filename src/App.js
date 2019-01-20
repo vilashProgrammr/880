@@ -68,25 +68,30 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <div className='arsenal'>
+          <h3> Arsenal </h3>
+          {this.state.weapons.map(weapon => (
+            <Arsenal
+              key={weapon.id}
+              weapon={weapon}
+            />
+          ))}
+        </div>
 
-      {this.state.weapons.map(weapon => (
-        <Arsenal
-          key={weapon.id}
-          weapon={weapon}
-        />
-      ))}
-
-       {this.state.characters.map(character => (
-         <Character
-            key={character.id}
-            character={character}
-            sword={this.sword}
-            bowArrow={this.bowArrow}
-            dragon={this.dragon}
-          />
-       ))}
-     </div>
+        <div className = 'characters'>
+         <h2> Characters </h2>
+          {this.state.characters.map(character => (
+             <Character
+                key={character.id}
+                character={character}
+                sword={this.sword}
+                bowArrow={this.bowArrow}
+                dragon={this.dragon}
+              />
+           ))}
+        </div>
+     </React.Fragment>
     );
   }
 }

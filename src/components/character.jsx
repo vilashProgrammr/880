@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import '../Character.css';
 
 class Character extends Component {
   render() {
-    //console.log('props', this.props);
+
     return (
-      <div>
+      <div className = 'character'>
         <span>
           My name is {this.props.character.name}.
           Weapon: {this.props.character.weapon}
