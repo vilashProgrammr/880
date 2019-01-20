@@ -25,31 +25,29 @@ class App extends Component {
     this.availabilityOfWeapons(characters, index, weaponName, weaponIndex);
   }
 
-  
-  takeWeapon = weaponID => {
-    const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
-    this.setState({weapons: weapons});
-  };
-
-  availabilityOfWeapons = (characters, index, message, weaponIndex) => {
-    if (this.state.weapons.find(item => item.value === message) !== undefined ) {
-      this.arm(characters, index, message, weaponIndex);
+  availabilityOfWeapons = (characters, index, weaponName, weaponIndex) => {
+    if (this.state.weapons.find(item => item.value === weaponName) !== undefined ) {
+      this.arm(characters, index, weaponName, weaponIndex);
     } else {
       this.noAvailability(characters, index);
     }
   };
 
-  arm = (characters, index, message, weaponIndex) => {
-    characters[index].weapon = message
+  arm = (characters, index, weaponName, weaponIndex) => {
+    characters[index].weapon = weaponName
     this.setState({ characters });
     this.takeWeapon(weaponIndex);
+  };
+
+  takeWeapon = weaponID => {
+    const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
+    this.setState({weapons: weapons});
   };
 
   noAvailability = (characters, index) => {
     characters[index].errorMessage = 'You have already given this weapon'
     + ' to another character'
     this.setState({ characters });
-    console.log(this.state.characters)
   }
 
   render() {
