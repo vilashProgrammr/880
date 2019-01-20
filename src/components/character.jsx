@@ -13,17 +13,17 @@ class Character extends Component {
           <p>
           Arm me:
         <button
-          onClick={() => this.props.sword(this.props.character)}>
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Sword', 1)}>
             Sword
         </button>
 
         <button
-          onClick={() => this.props.bowArrow(this.props.character)}>
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Bow & Arrow', 2)}>
             Bow & Arrow
         </button>
 
         <button
-          onClick={() => this.props.dragon(this.props.character)}>
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Dragon', 3)}>
             Dragon
         </button>
 

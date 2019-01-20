@@ -18,28 +18,14 @@ class App extends Component {
     ]
   }
 
-  sword = character => {
+  handleWeaponClick = (character, weaponName, weaponIndex) => {
     const characters = [...this.state.characters]
     const index = characters.indexOf(character)
-    characters[index] = {...character} //how to successfully refactor these lines?
-    this.availabilityOfWeapons(characters, index, 'Sword', 1);
+    characters[index] = {...character}
+    this.availabilityOfWeapons(characters, index, weaponName, weaponIndex);
   }
 
-  bowArrow = character => {
-    const characters = [...this.state.characters]
-    const index = characters.indexOf(character)
-    characters[index] = { ...character }
-    this.availabilityOfWeapons(characters, index, 'Bow & Arrow', 2);
-  };
-
-  dragon = (character) => {
-    const characters = [...this.state.characters]
-    const index = characters.indexOf(character)
-    characters[index] = { ...character }
-    this.availabilityOfWeapons(characters, index, 'Dragon', 3);
-  };
-
-
+  
   takeWeapon = weaponID => {
     const weapons = this.state.weapons.filter(weapon => weapon.id !== weaponID);
     this.setState({weapons: weapons});
@@ -85,9 +71,7 @@ class App extends Component {
              <Character
                 key={character.id}
                 character={character}
-                sword={this.sword}
-                bowArrow={this.bowArrow}
-                dragon={this.dragon}
+                handleWeaponClick={this.handleWeaponClick}
               />
            ))}
         </div>
