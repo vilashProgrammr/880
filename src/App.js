@@ -6,22 +6,38 @@ import './App.css';
 class App extends Component {
   state = {
     characters: [
-      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '', description: "I'm a badass"},
-      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '', description: "I've got red hair"},
-      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '', description: "I'm super tall and amazing"}
+      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '', description: ''},
+      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '', description: ''},
+      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '', description:''}
     ],
 
     weapons: [
       {id: 1, value: 'Sword'},
       {id: 2, value: 'Bow & Arrow'},
       {id: 3, value: 'Dragon'}
-    ]
+    ],
 
-    // descriptions: [
-    //   {id: 1, value: 'Arya Stark', description: "I'm a badass"},
-    //   {id: 2, value: 'Sansa Stark', description: "I've got red hair"},
-    //   {id: 3, value: 'Brienne of Tarth', description: "I'm super tall and amazing"}
-    // ]
+    descriptions: [
+      {id: 1, value: 'Arya Stark', description: "I'm small "},
+      {id: 2, value: 'Sansa Stark', description: "I'm a bit annoying"},
+      {id: 3, value: 'Brienne of Tarth', description: "I'm amazing"} //change to words
+    ]
+  }
+
+//it's the other way around - we need to alter the characters
+  handleDescription = (character) => { //we don't need to clone the character, only the description
+     // go through and selec the description from the character id
+    var description = this.state.descriptions.find(description => description.id === character.id)
+
+    var characterDescription = description.description
+
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = {...character}
+
+    characters[index].description = characterDescription//change. description to words
+    this.setState({ characters });
+
   }
 
   handleWeaponClick = (character, weaponName, weaponIndex) => {
@@ -76,9 +92,13 @@ class App extends Component {
                 key={character.id}
                 character={character}
                 handleWeaponClick={this.handleWeaponClick}
+                handleDescription={this.handleDescription}
+                descriptions={this.state.descriptions}
               />
            ))}
         </div>
+
+
      </React.Fragment>
     );
   }

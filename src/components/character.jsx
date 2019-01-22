@@ -28,11 +28,19 @@ class Character extends Component {
         </button>
 
           {this.props.character.errorMessage}
+          {this.props.character.description}
         </p>
 
         <Description
-          description = {this.props.character.description}
+          handleDescription = {this.props.handleDescription}
+          character= {this.props.character}
+
+          //characterID = {this.props.character.ID} //maybe pass down whole character
         />
+
+
+
+
       </div>
     );
   }
