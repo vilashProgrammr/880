@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
+import Description from './description';
 
 class Character extends Component {
   render() {
 
     return (
       <div className = 'character'>
-        <span>
+
           My name is {this.props.character.name}.
-          Weapon: {this.props.character.weapon}
-        </span>
+          <p> Weapon: {this.props.character.weapon} </p>
 
           <p>
           Arm me:
@@ -30,6 +30,7 @@ class Character extends Component {
           {this.props.character.errorMessage}
         </p>
 
+        <Description/>
       </div>
     );
   }
