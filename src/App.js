@@ -6,9 +6,9 @@ import './App.css';
 class App extends Component {
   state = {
     characters: [
-      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: ''},
-      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: ''},
-      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: ''}
+      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '', description: "I'm a badass"},
+      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '', description: "I've got red hair"},
+      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '', description: "I'm super tall and amazing"}
     ],
 
     weapons: [
@@ -16,6 +16,12 @@ class App extends Component {
       {id: 2, value: 'Bow & Arrow'},
       {id: 3, value: 'Dragon'}
     ]
+
+    // descriptions: [
+    //   {id: 1, value: 'Arya Stark', description: "I'm a badass"},
+    //   {id: 2, value: 'Sansa Stark', description: "I've got red hair"},
+    //   {id: 3, value: 'Brienne of Tarth', description: "I'm super tall and amazing"}
+    // ]
   }
 
   handleWeaponClick = (character, weaponName, weaponIndex) => {

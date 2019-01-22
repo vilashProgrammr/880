@@ -30,7 +30,9 @@ class Character extends Component {
           {this.props.character.errorMessage}
         </p>
 
-        <Description/>
+        <Description
+          description = {this.props.character.description}
+        />
       </div>
     );
   }

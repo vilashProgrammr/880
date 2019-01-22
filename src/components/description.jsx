@@ -3,7 +3,11 @@ import React, {Component} from 'react';
 class Description extends Component {
   render(){
     return (
-      <div> I'm a description </div>
+      <React.Fragment>
+      <button > Show character description </button>
+
+      <div> {this.props.description} </div>
+      </React.Fragment>
     )
   }
 }
