@@ -6,9 +6,9 @@ import './App.css';
 class App extends Component {
   state = {
     characters: [
-      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '', description: ''},
-      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '', description: ''},
-      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '', description:''}
+      {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '', description: "I'm small", selected: false},
+      {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '', description: ' hi'},
+      {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '', description:'hello'}
     ],
 
     weapons: [
@@ -18,10 +18,19 @@ class App extends Component {
     ],
 
     descriptions: [
-      {id: 1, value: 'Arya Stark', description: "I'm small "},
+      {id: 1, value: 'Arya Stark', description: "I'm small "}, // don't need the names really, only for clarity
       {id: 2, value: 'Sansa Stark', description: "I'm a bit annoying"},
       {id: 3, value: 'Brienne of Tarth', description: "I'm amazing"} //change to words
     ]
+  }
+
+  handleSelected = (character) => {
+    const characters = [...this.state.characters]
+    const index = characters.indexOf(character)
+    characters[index] = {...character}
+
+    characters[index].selected = true
+    this.setState({ characters });
   }
 
 //it's the other way around - we need to alter the characters
@@ -94,6 +103,7 @@ class App extends Component {
                 handleWeaponClick={this.handleWeaponClick}
                 handleDescription={this.handleDescription}
                 descriptions={this.state.descriptions}
+                handleSelected={this.handleSelected}
               />
            ))}
         </div>

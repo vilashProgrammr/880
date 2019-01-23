@@ -28,18 +28,17 @@ class Character extends Component {
         </button>
 
           {this.props.character.errorMessage}
-          {this.props.character.description}
+          <span className='descriptions'> {this.props.character.description} </span>
         </p>
 
-        <Description
-          handleDescription = {this.props.handleDescription}
-          character= {this.props.character}
 
+
+       <Description
+          handleSelected = {this.props.handleSelected}
+          handleDescription = {this.props.handleDescription}
+          character= {this.props.character}  ///is it really necessary to have a seperate descriptions component?
           //characterID = {this.props.character.ID} //maybe pass down whole character
         />
-
-
-
 
       </div>
     );
