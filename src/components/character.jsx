@@ -8,10 +8,18 @@ class Character extends Component {
       <div className = 'character'>
 
           My name is {this.props.character.name}.
+          <p>
+          <Description
+
+             handleSelected = {this.props.handleSelected}
+             character= {this.props.character}
+           />
+          </p>
           <p> Weapon: {this.props.character.weapon} </p>
 
           <p>
           Arm me:
+
         <button
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Sword', 1)}>
             Sword
@@ -27,14 +35,9 @@ class Character extends Component {
             Dragon
         </button>
 
-          {this.props.character.errorMessage}
+        <p className= 'errorMessage' > {this.props.character.errorMessage} </p>
 
         </p>
-
-       <Description
-          handleSelected = {this.props.handleSelected}
-          character= {this.props.character}
-        />
 
       </div>
     );

@@ -3,14 +3,14 @@ import React, {Component} from 'react';
 class Description extends Component {
   render(){
     return (
-      <React.Fragment>
+      <React.Fragment >
 
        <button
         onClick={() => this.props.handleSelected(this.props.character)}>
            Show character description
        </button>
 
-      <div> {this.props.character.selected && this.props.character.description} </div>
+      <div className = 'descriptionWords'> {this.props.character.selected && this.props.character.description} </div>
       </React.Fragment>
 
     )
