@@ -8,16 +8,15 @@ class Character extends Component {
       <div className = 'character'>
 
           My name is {this.props.character.name}.
-          <p>
+          <div>
           <Description
-
              handleSelected = {this.props.handleSelected}
              character= {this.props.character}
            />
-          </p>
-          <p> Weapon: {this.props.character.weapon} </p>
+          </div>
+          <div> Weapon: {this.props.character.weapon} </div>
 
-          <p>
+          <div>
           Arm me:
 
         <button
@@ -50,9 +49,9 @@ class Character extends Component {
             Wildfire
         </button>
 
-        <p className= 'errorMessage' > {this.props.character.errorMessage} </p>
+        <div className= 'errorMessage' > {this.props.character.errorMessage} </div>
 
-        </p>
+        </div>
 
       </div>
     );

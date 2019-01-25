@@ -11,9 +11,8 @@ class App extends Component {
               description: 'A girl has no description', selected: false},
 
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '',
-              description: "Daughter of Ned and Catelyn Stark. She used to be annoying," +
-                            " but now she's awesome. Had an unfortunate crush on Jeoffry and" +
-                            " made some bad life choices, but we've over that now.", selected: false},
+              description: "Had an unfortunate crush on Jeoffry and" +
+                            " made some bad life choices, but now she's awesome.", selected: false},
 
       {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '',
               description:"The legend. The master. Can she do no wrong? I love her so much", selected: false},
@@ -31,7 +30,10 @@ class App extends Component {
     weapons: [
       {id: 1, value: 'Sword'},
       {id: 2, value: 'Bow & Arrow'},
-      {id: 3, value: 'Dragon'}
+      {id: 3, value: 'Dragon'},
+      {id: 4, value: 'Poison'},
+      {id: 5, value: 'Dagger'},
+      {id: 6, value: 'Wildfire'}
     ]
   }
 
@@ -89,7 +91,7 @@ class App extends Component {
         </div>
 
         <div className = 'characters'>
-         <h2> Characters </h2>
+        <div className = 'title'>   Characters </div>
           {this.state.characters.map(character => (
              <Character
                 key={character.id}
