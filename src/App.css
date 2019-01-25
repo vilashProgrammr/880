@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri');
+
 .arsenal {
   float: right;
   position: absolute;
@@ -53,5 +55,7 @@ button {
 
 body {
   background-image: url("Parchment.jpeg");
-  font-size: 20px;
+   font-family: 'Amiri';
+   font-size: 30px;
+
 }

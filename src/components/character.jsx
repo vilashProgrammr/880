@@ -35,6 +35,21 @@ class Character extends Component {
             Dragon
         </button>
 
+        <button
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Poison', 4)}>
+            Poison
+        </button>
+
+        <button
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Dagger', 5)}>
+            Dagger
+        </button>
+
+        <button
+          onClick={() => this.props.handleWeaponClick(this.props.character, 'Wildfire', 6)}>
+            Wildfire
+        </button>
+
         <p className= 'errorMessage' > {this.props.character.errorMessage} </p>
 
         </p>

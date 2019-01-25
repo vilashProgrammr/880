@@ -3,17 +3,29 @@ import Character from './components/character';
 import Arsenal from './components/arsenal';
 import './App.css';
 
+
 class App extends Component {
   state = {
     characters: [
       {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '',
               description: 'A girl has no description', selected: false},
+
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '',
               description: "Daughter of Ned and Catelyn Stark. She used to be annoying," +
                             " but now she's awesome. Had an unfortunate crush on Jeoffry and" +
                             " made some bad life choices, but we've over that now.", selected: false},
+
       {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '',
-              description:"The legend. The master. Can she do no wrong? I love her so much", selected: false}
+              description:"The legend. The master. Can she do no wrong? I love her so much", selected: false},
+
+      {id: 4, name: 'Jaime Lannister', weapon: 'Unarmed', errorMessage: '',
+              description:"Formerly evil, currently adorable.", selected: false},
+
+      {id: 5, name: 'Cersei Lannister', weapon: 'Unarmed', errorMessage: '',
+              description:"Just the worst", selected: false},
+
+      {id: 6, name: 'Daenerys/Khaleesi/Mother of Dragons', weapon: 'Unarmed', errorMessage: '',
+              description:"Super cool chick", selected: false}
     ],
 
     weapons: [
