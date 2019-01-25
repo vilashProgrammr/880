@@ -29,18 +29,19 @@
 .descriptionWords {
   text-align: center;
   position: absolute;
-  left: 120%;
+  left: 130%;
   right: 25%;
-  outline-style: double;
   height: 150px;
   width: 500px;
   bottom: 15%;
   padding-top: 10%;
-  padding-bottom: 10%;
+
 }
 
 .title{
   font-size: 50px;
+  position: relative;
+  top: 25px;
 }
 
 .errorMessage {
