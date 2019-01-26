@@ -7,7 +7,7 @@ class Character extends Component {
     return (
       <div className = 'character'>
 
-          My name is {this.props.character.name}.
+          {this.props.character.name}
           <div>
           <Description
              handleSelected = {this.props.handleSelected}

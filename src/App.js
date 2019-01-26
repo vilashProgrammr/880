@@ -8,23 +8,23 @@ class App extends Component {
   state = {
     characters: [
       {id: 1, name: 'Arya Stark', weapon: 'Unarmed', errorMessage: '',
-              description: 'A girl has no description', selected: false},
+              description: 'A girl has no description.', selected: false},
 
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '',
               description: "Had an unfortunate crush on Jeoffry and" +
                             " made some bad life choices, but now she's awesome.", selected: false},
 
       {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '',
-              description:"The legend. The master. Can she do no wrong? I love her so much", selected: false},
+              description:"The legend. The master. Can she do no wrong? I love her so much.", selected: false},
 
       {id: 4, name: 'Jaime Lannister', weapon: 'Unarmed', errorMessage: '',
               description:"Formerly evil, currently adorable.", selected: false},
 
       {id: 5, name: 'Cersei Lannister', weapon: 'Unarmed', errorMessage: '',
-              description:"Just the worst", selected: false},
+              description:"Just the worst.", selected: false},
 
       {id: 6, name: 'Daenerys/Khaleesi/Mother of Dragons', weapon: 'Unarmed', errorMessage: '',
-              description:"Super cool chick", selected: false}
+              description:"Super cool chick.", selected: false}
     ],
 
     weapons: [
