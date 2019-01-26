@@ -4,7 +4,7 @@ A simple ongoing project in order to prepare the Game of Thrones characters for 
 
 ## Goals
 
-To build my first React project without a tutorial. I'm not going to take on learning Jest for testing yet - one thing at a time.
+To build my first React project without a tutorial.
 
 ## Features
 
@@ -27,6 +27,11 @@ Users can click on a character and see their description.
 - There's one source of truth - the App component, which holds all the states.
 - The App component renders the Character components, which, in turn, renders the Description components
 - The App also renders the Arsenal components.
+
+## Testing
+
+- I didn't TDD this project, because I wanted to become familiar with React itself first. 
+- It's currently untested, because I want to learn Jest to test it. 
 
 ## Future Improvements
 
