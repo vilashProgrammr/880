@@ -11,7 +11,7 @@ class App extends Component {
               description: 'A girl has no description.', selected: false},
 
       {id: 2, name: 'Sansa Stark', weapon: 'Unarmed', errorMessage: '',
-              description: "Had an unfortunate crush on Jeoffry and" +
+              description: "Had an unfortunate crush on Joffrey and" +
                             " made some bad life choices, but now she's awesome.", selected: false},
 
       {id: 3, name: 'Brienne of Tarth', weapon: 'Unarmed', errorMessage: '',
