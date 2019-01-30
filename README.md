@@ -28,18 +28,6 @@ Users can click on a character and see their description.
 - The App component renders the Character components, which, in turn, renders the Description components
 - The App also renders the Arsenal components.
 
-## Testing
-
-- I didn't TDD this project, because I wanted to become familiar with React itself first. 
-- It's currently untested, because I want to learn Jest to test it. 
-
-## Future Improvements
-
-- Perhaps change the Arsenal class to a Stateless Functional Component
-- The weapon buttons should probably be a component, as there's a lot of repetition of them.
-- Implement some sort of game
-- Learn Jest and test it
-
 ## To run
 
 In the project directory, run:
@@ -48,3 +36,31 @@ In the project directory, run:
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Testing
+
+- I didn't TDD this project, because I wanted to become familiar with React itself first.  
+- Feature testing is done with Cypress, a technology I learnt after Makers. 
+- Testing is ongoing: it is currently not unit tested, as I wanted to learn Jest to do so.
+
+To run all the feature tests:
+
+First, keep the server running. Then:
+```
+$ npx Cypress run
+```
+
+...will print out the tests in the terminal. Or:
+
+```
+$ npx Cypress open
+```
+and then click on each test, or on 'Run all Specs'. This will allow you to see the tests with images. 
+
+## Future Improvements
+
+- Perhaps change the Arsenal class to a Stateless Functional Component
+- The weapon buttons should probably be a component, as there's a lot of repetition of them.
+- Implement some sort of game
+- Learn Jest and test it
+
