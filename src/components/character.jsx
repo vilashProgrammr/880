@@ -8,7 +8,7 @@ class Character extends Component {
       <div className = 'character' id = {this.props.character.id}>
 
           {this.props.character.name}
-          <div>
+          <div className = 'description'>
           <Description
              handleSelected = {this.props.handleSelected}
              character= {this.props.character}
@@ -19,32 +19,32 @@ class Character extends Component {
           <div>
           Arm me:
 
-        <button className = "Sword"
+        <button className = 'Sword'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Sword', 1)}>
             Sword
         </button>
 
-        <button
+        <button className = 'Bow & Arrow'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Bow & Arrow', 2)}>
             Bow & Arrow
         </button>
 
-        <button
+        <button className = 'Dragon'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Dragon', 3)}>
             Dragon
         </button>
 
-        <button
+        <button className = 'Poison'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Poison', 4)}>
             Poison
         </button>
 
-        <button
+        <button className = 'Dagger'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Dagger', 5)}>
             Dagger
         </button>
 
-        <button
+        <button className = 'Wildfire'
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Wildfire', 6)}>
             Wildfire
         </button>

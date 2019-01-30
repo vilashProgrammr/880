@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class Description extends Component {
   render(){
     return (
-      <React.Fragment >
+      <React.Fragment>
 
-       <button
+       <button className = 'descriptionButton'
         onClick={() => this.props.handleSelected(this.props.character)}>
            Show character description
        </button>
