@@ -5,7 +5,7 @@ class Character extends Component {
   render() {
 
     return (
-      <div className = 'character'>
+      <div className = 'character' id = {this.props.character.id}>
 
           {this.props.character.name}
           <div>
@@ -19,7 +19,7 @@ class Character extends Component {
           <div>
           Arm me:
 
-        <button
+        <button className = "Sword"
           onClick={() => this.props.handleWeaponClick(this.props.character, 'Sword', 1)}>
             Sword
         </button>

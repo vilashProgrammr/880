@@ -98,6 +98,7 @@ class App extends Component {
                 character={character}
                 handleWeaponClick={this.handleWeaponClick}
                 handleSelected={this.handleSelected}
+                id={character.id}
               />
            ))}
         </div>
