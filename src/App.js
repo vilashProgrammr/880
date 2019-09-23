@@ -81,7 +81,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className='arsenal'>
-          <h2> Arsenal </h2>
+          <h2>Arsenal </h2>
           {this.state.weapons.map(weapon => (
             <Arsenal
               key={weapon.id}
